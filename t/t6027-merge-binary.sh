@@ -4,7 +4,7 @@ test_description='ask merge-recursive to merge binary files'
 
 . ./test-lib.sh
 
-test_expect_success setup '
+test1_expect_success setup '
 
 	cat "$TEST_DIRECTORY"/test-binary-1.png >m &&
 	git add m &&
@@ -34,7 +34,7 @@ test_expect_success setup '
 	cat E0 E1 E2 E3 >expect
 '
 
-test_expect_success resolve '
+test1_expect_success resolve '
 
 	rm -f a* m* &&
 	git reset --hard anchor &&
@@ -49,7 +49,7 @@ test_expect_success resolve '
 	fi
 '
 
-test_expect_success recursive '
+test1_expect_success recursive '
 
 	rm -f a* m* &&
 	git reset --hard anchor &&
@@ -64,4 +64,4 @@ test_expect_success recursive '
 	fi
 '
 
-test_done
+test1_done
